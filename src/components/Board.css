@@ -1,0 +1,20 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(230px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 1200px) {
+  .board {
+    grid-template-columns: repeat(3, minmax(230px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .board {
+    grid-template-columns: repeat(1, minmax(230px, 1fr));
+  }
+}

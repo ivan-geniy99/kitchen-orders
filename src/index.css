@@ -1,0 +1,148 @@
+:root {
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-border: #dcdfe4;
+  --color-text: #1f2328;
+  --color-muted: #6b7280;
+  --color-accent: #2563eb;
+  --color-accent-soft: #e5edff;
+  --color-danger: #b42318;
+  --color-danger-soft: #fdeceb;
+  --color-complaint: #7c3aed;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.12);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+dt {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.button {
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.button--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.button--primary:hover {
+  background: #1d4ed8;
+}
+
+.button--ghost {
+  background: transparent;
+  border-color: var(--color-border);
+}
+
+.button--ghost:hover {
+  background: var(--color-bg);
+}
+
+/* Общая оболочка модальных окон: карточка заказа и окна смены статуса */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px;
+  background: rgba(16, 24, 40, 0.45);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.overlay--top {
+  z-index: 30;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 640px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.dialog--narrow {
+  max-width: 520px;
+}
+
+.dialog__header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dialog__title {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.dialog__close {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dialog__close:hover {
+  background: var(--color-bg);
+}
+
+.dialog__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}

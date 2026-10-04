@@ -1,0 +1,177 @@
+/* Стили полей и заметок остаются в OrderDialog.css: оболочка окна
+   (overlay, dialog, header, actions) вынесена в index.css. */
+
+.dialog__note,
+.dialog__hint {
+  margin-bottom: 12px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.dialog__status {
+  margin-bottom: 4px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.dialog__status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.dialog__status-value {
+  font-weight: 650;
+}
+
+.dialog__hint {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.dialog__readonly-note {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.dialog__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.field--wide {
+  grid-column: 1 / -1;
+}
+
+.field__label {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.field__optional {
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.field__control {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font: inherit;
+}
+
+.field__control:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.field__control[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.field__control:read-only,
+.field__control:disabled {
+  background: var(--color-bg);
+  color: var(--color-muted);
+}
+
+.field__control--area {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.field__error {
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+/* Комментарии к заказу */
+.comments {
+  grid-column: 1 / -1;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.comments__title {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.comments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.comments__empty {
+  margin: 0 0 10px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.comment {
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.comment__meta {
+  margin-bottom: 2px;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.comment__author {
+  color: var(--color-text);
+  font-weight: 650;
+}
+
+.comment__text {
+  overflow-wrap: anywhere;
+}
+
+.comments__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comments__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comments__hint {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .dialog__form {
+    grid-template-columns: 1fr;
+  }
+}

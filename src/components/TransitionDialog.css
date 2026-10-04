@@ -1,0 +1,9 @@
+.dialog__route {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.dialog__route strong {
+  color: var(--color-text);
+}

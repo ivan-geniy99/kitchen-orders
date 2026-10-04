@@ -1,0 +1,121 @@
+.card-holder {
+  border-radius: var(--radius-md);
+  cursor: grab;
+}
+
+.card-holder:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.card-holder--dragging {
+  cursor: grabbing;
+  opacity: 0.35;
+}
+
+/* Карточка в «Сделано» не перетаскивается (AC-62) */
+.card-holder--static {
+  cursor: pointer;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--overlay {
+  box-shadow: var(--shadow-md);
+  cursor: grabbing;
+  transform: rotate(1.5deg);
+}
+
+/* Просроченный незавершённый заказ — только визуальное выделение (AC-14, AC-18) */
+.card--overdue {
+  border-color: var(--color-danger);
+  border-left-color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.card__top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.card__number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+
+.card__type {
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.card__type--complaint {
+  background: #f1eafe;
+  color: var(--color-complaint);
+}
+
+.card__title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.card__client {
+  margin-bottom: 8px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.card__client-label {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.card__overdue {
+  margin-bottom: 8px;
+  color: var(--color-danger);
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+
+.card__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+  margin: 0;
+}
+
+.card__field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card__field--wide {
+  grid-column: 1 / -1;
+}
+
+.card__field dt {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.card__field dd {
+  margin: 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
